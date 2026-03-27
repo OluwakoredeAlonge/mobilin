@@ -39,9 +39,52 @@
       transition: width .3s ease;
     }
     .nav-link:hover::after { width: 100%; }
+    .drawer-open { transform: translateX(0) !important; }
+    .overlay-open { opacity:1 !important; pointer-events:auto !important; }
   </style>
 </head>
 <body class="bg-cream text-bark font-sans antialiased">
+
+  <!-- MOBILE DRAWER OVERLAY -->
+  <div id="drawer-overlay" class="fixed inset-0 z-[60] bg-bark/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 md:hidden" aria-hidden="true"></div>
+
+  <!-- MOBILE DRAWER -->
+  <div id="mobile-drawer" class="fixed top-0 right-0 z-[70] h-full w-[320px] max-w-[90vw] bg-cream translate-x-full transition-transform duration-300 ease-out md:hidden flex flex-col shadow-2xl" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="flex items-center justify-between px-6 h-16 border-b border-bark/10 shrink-0">
+      <span class="font-serif font-black text-xl text-bark tracking-tight">MOBILIN</span>
+      <button id="close-drawer" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-sand transition-colors" aria-label="Close menu">
+        <i data-lucide="x" class="w-5 h-5 text-bark"></i>
+      </button>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-6 py-4">
+      <a href="index.html"     class="flex items-center justify-between py-4 border-b border-bark/8 text-base font-semibold text-bark hover:text-ember transition-colors">Home <i data-lucide="chevron-right" class="w-4 h-4 text-bark/30"></i></a>
+      <a href="about.html"    class="flex items-center justify-between py-4 border-b border-bark/8 text-base font-semibold text-bark hover:text-ember transition-colors">About <i data-lucide="chevron-right" class="w-4 h-4 text-bark/30"></i></a>
+      <a href="products.html" class="flex items-center justify-between py-4 border-b border-bark/8 text-base font-semibold text-bark hover:text-ember transition-colors">Products <i data-lucide="chevron-right" class="w-4 h-4 text-bark/30"></i></a>
+      <a href="contact.html"  class="flex items-center justify-between py-4 border-b border-bark/8 text-base font-semibold text-bark hover:text-ember transition-colors">Contact <i data-lucide="chevron-right" class="w-4 h-4 text-bark/30"></i></a>
+      <div class="mt-8 space-y-3">
+        <p class="text-xs font-semibold uppercase tracking-widest text-bark/40">Quick contact</p>
+        <a href="https://wa.me/2348000000000" class="flex items-center gap-3 text-sm text-bark/60 hover:text-ember transition-colors">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp us
+        </a>
+        <a href="tel:+2348000000000" class="flex items-center gap-3 text-sm text-bark/60 hover:text-ember transition-colors">
+          <i data-lucide="phone" class="w-4 h-4"></i> +234 800 000 0000
+        </a>
+        <a href="mailto:hello@mobilin.ng" class="flex items-center gap-3 text-sm text-bark/60 hover:text-ember transition-colors">
+          <i data-lucide="mail" class="w-4 h-4"></i> hello@mobilin.ng
+        </a>
+      </div>
+    </nav>
+    <div class="px-6 pb-8 pt-4 border-t border-bark/10 shrink-0 space-y-3">
+      <a href="products.html" class="flex items-center justify-center gap-2 bg-bark text-cream font-bold py-4 rounded-full text-sm hover:bg-ember transition-colors">
+        Order Now <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+      <div class="flex justify-center gap-5 pt-2">
+        <a href="#" aria-label="Instagram" class="text-bark/40 hover:text-ember transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+        <a href="#" aria-label="Twitter"   class="text-bark/40 hover:text-ember transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+        <a href="#" aria-label="Facebook"  class="text-bark/40 hover:text-ember transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+      </div>
+    </div>
+  </div>
 
   <!-- NAV -->
   <header class="fixed top-0 inset-x-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-bark/10">
@@ -56,8 +99,8 @@
       <a href="products.html" class="hidden md:inline-flex items-center gap-2 bg-bark text-cream text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-ember transition-colors duration-300">
         Shop Now <i data-lucide="arrow-right" class="w-4 h-4"></i>
       </a>
-      <button class="md:hidden text-bark" aria-label="Menu">
-        <i data-lucide="menu" class="w-6 h-6"></i>
+      <button id="menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-sand transition-colors" aria-label="Open menu">
+        <i data-lucide="menu" class="w-5 h-5 text-bark"></i>
       </button>
     </div>
   </header>
@@ -328,6 +371,29 @@
     </div>
   </footer>
 
-  <script>lucide.createIcons();</script>
+  <script>
+    // Mobile nav drawer
+    const menuBtn   = document.getElementById('menu-btn');
+    const drawer    = document.getElementById('mobile-drawer');
+    const overlay   = document.getElementById('drawer-overlay');
+    const closeBtn  = document.getElementById('close-drawer');
+
+    function openDrawer()  {
+      drawer.classList.add('drawer-open');
+      overlay.classList.add('overlay-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer() {
+      drawer.classList.remove('drawer-open');
+      overlay.classList.remove('overlay-open');
+      document.body.style.overflow = '';
+    }
+
+    menuBtn.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+
+    lucide.createIcons();
+  </script>
 </body>
 </html>

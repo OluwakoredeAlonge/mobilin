@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Mobilin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#F7F3EE',
+            sand:  '#EDE6D9',
+            bark:  '#3B2F25',
+            ember: '#C0622A',
+            moss:  '#3D5A44',
+          },
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans:  ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 1px;
+      background: currentColor;
+      transition: width .3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+  </style>
+</head>
+<body class="bg-cream text-bark font-sans antialiased">
+
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-bark/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
+      <a href="index.html" class="font-serif font-black text-xl tracking-tight text-bark">MOBILIN</a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-bark/70">
+        <a href="index.html"    class="nav-link hover:text-bark transition-colors">Home</a>
+        <a href="about.html"   class="nav-link text-bark font-semibold">About</a>
+        <a href="products.html" class="nav-link hover:text-bark transition-colors">Products</a>
+        <a href="contact.html" class="nav-link hover:text-bark transition-colors">Contact</a>
+      </nav>
+      <a href="products.html" class="hidden md:inline-flex items-center gap-2 bg-bark text-cream text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-ember transition-colors duration-300">
+        Shop Now <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+      <button class="md:hidden text-bark" aria-label="Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="pt-16">
+
+    <!-- PAGE HEADER -->
+    <section class="bg-bark text-cream py-24 px-6 lg:px-12">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex items-center gap-2 text-ember text-xs font-semibold uppercase tracking-widest mb-6">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Lagos, Nigeria
+        </div>
+        <h1 class="font-serif font-black text-5xl sm:text-6xl lg:text-7xl text-cream leading-tight max-w-3xl">
+          We're Mobilin.<br />
+          <em class="not-italic text-ember">Here's our story.</em>
+        </h1>
+      </div>
+    </section>
+
+    <!-- STORY — CHAPTER 1 -->
+    <section class="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-widest text-ember mb-4">How it started</p>
+          <h2 class="font-serif font-black text-3xl sm:text-4xl text-bark mb-8 leading-snug">
+            A kitchen in Surulere.<br />A big, stubborn idea.
+          </h2>
+          <div class="space-y-5 text-bark/65 leading-relaxed">
+            <p>
+              It started the way most real things do — not with a business plan, but with a feeling.
+              Founder Tolu Adeyemi had spent years watching products she loved slowly compromise on
+              quality once they got bigger. The ingredients would change. The care would go missing.
+              The thing that made it special would vanish quietly, as if no one would notice.
+            </p>
+            <p>
+              She noticed. And she was tired of it.
+            </p>
+            <p>
+              In 2019, working out of her mother's kitchen in Surulere, Tolu began making products
+              the way she believed they should be made — small batches, real ingredients, no shortcuts.
+              She gave them to neighbours, to friends, to anyone willing to give honest feedback.
+              The response was always the same: <em class="not-italic font-medium text-bark">"Where can I buy more of this?"</em>
+            </p>
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden aspect-[4/5] bg-sand">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=80" alt="Founder in kitchen" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY — CHAPTER 2 (reversed) -->
+    <section class="py-8 pb-24 px-6 lg:px-12 max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div class="rounded-2xl overflow-hidden aspect-[4/5] bg-sand order-2 lg:order-1">
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=700&q=80" alt="Products being made" class="w-full h-full object-cover" />
+        </div>
+        <div class="order-1 lg:order-2">
+          <p class="text-xs font-semibold uppercase tracking-widest text-ember mb-4">Growing up</p>
+          <h2 class="font-serif font-black text-3xl sm:text-4xl text-bark mb-8 leading-snug">
+            From Surulere<br />to the whole city.
+          </h2>
+          <div class="space-y-5 text-bark/65 leading-relaxed">
+            <p>
+              Word spread the way it only does when something is genuinely good. By 2021, Mobilin
+              had outgrown the kitchen and moved into a small production space in Yaba. The team
+              grew — carefully, deliberately. Every new person hired had to believe in the same thing:
+              that doing it right was non-negotiable, even when it cost more.
+            </p>
+            <p>
+              Today, Mobilin ships across Lagos and beyond. The city that shaped us is still at the
+              centre of everything we do — our suppliers, our community, our people.
+              Lagos isn't just where we're based. It's who we are.
+            </p>
+            <p>
+              The kitchen in Surulere is gone. The stubbornness isn't.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUMBERS -->
+    <section class="bg-sand py-20 px-6 lg:px-12">
+      <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div class="py-8">
+          <p class="font-serif font-black text-5xl text-bark mb-2">2019</p>
+          <p class="text-xs font-semibold uppercase tracking-widest text-ember">Founded</p>
+        </div>
+        <div class="py-8">
+          <p class="font-serif font-black text-5xl text-bark mb-2">12k+</p>
+          <p class="text-xs font-semibold uppercase tracking-widest text-ember">Customers</p>
+        </div>
+        <div class="py-8">
+          <p class="font-serif font-black text-5xl text-bark mb-2">18</p>
+          <p class="text-xs font-semibold uppercase tracking-widest text-ember">Team members</p>
+        </div>
+        <div class="py-8">
+          <p class="font-serif font-black text-5xl text-bark mb-2">100%</p>
+          <p class="text-xs font-semibold uppercase tracking-widest text-ember">Natural ingredients</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION + VISION -->
+    <section class="py-28 px-6 lg:px-12 max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-bark text-cream rounded-2xl p-10 lg:p-14">
+          <div class="w-10 h-10 bg-ember/20 rounded-xl flex items-center justify-center mb-8">
+            <i data-lucide="target" class="w-5 h-5 text-ember"></i>
+          </div>
+          <p class="text-xs font-semibold uppercase tracking-widest text-ember mb-4">Our Mission</p>
+          <h3 class="font-serif font-bold text-2xl text-cream mb-5 leading-snug">To prove that quality and accessibility aren't opposites.</h3>
+          <p class="text-cream/55 leading-relaxed text-sm">
+            We believe great products shouldn't be reserved for a few. Our mission is to make
+            exceptional quality available to everyone — without ever compromising on what makes
+            our products worth buying in the first place.
+          </p>
+        </div>
+        <div class="bg-ember text-cream rounded-2xl p-10 lg:p-14">
+          <div class="w-10 h-10 bg-cream/20 rounded-xl flex items-center justify-center mb-8">
+            <i data-lucide="eye" class="w-5 h-5 text-cream"></i>
+          </div>
+          <p class="text-xs font-semibold uppercase tracking-widest text-cream/60 mb-4">Our Vision</p>
+          <h3 class="font-serif font-bold text-2xl text-cream mb-5 leading-snug">A Lagos brand recognised globally for uncompromising craft.</h3>
+          <p class="text-cream/70 leading-relaxed text-sm">
+            We want Mobilin to be the name people think of when they think of quality from Nigeria.
+            Not just another local brand that made it big — but proof of what's possible when
+            you refuse to settle.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="bg-sand py-28 px-6 lg:px-12">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-16">
+          <p class="text-xs font-semibold uppercase tracking-widest text-ember mb-3">What drives us</p>
+          <h2 class="font-serif font-black text-4xl sm:text-5xl text-bark">Our values</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-cream rounded-2xl p-8">
+            <span class="font-serif font-black text-6xl text-bark/10 block mb-3">01</span>
+            <h3 class="font-serif font-bold text-xl text-bark mb-3">Integrity</h3>
+            <p class="text-bark/55 text-sm leading-relaxed">We say what we mean and mean what we say. In every ingredient label, every price, every interaction.</p>
+          </div>
+          <div class="bg-cream rounded-2xl p-8">
+            <span class="font-serif font-black text-6xl text-bark/10 block mb-3">02</span>
+            <h3 class="font-serif font-bold text-xl text-bark mb-3">Craft</h3>
+            <p class="text-bark/55 text-sm leading-relaxed">We take pride in the details other people skip. That obsession is what separates good from great.</p>
+          </div>
+          <div class="bg-cream rounded-2xl p-8">
+            <span class="font-serif font-black text-6xl text-bark/10 block mb-3">03</span>
+            <h3 class="font-serif font-bold text-xl text-bark mb-3">Community</h3>
+            <p class="text-bark/55 text-sm leading-relaxed">Lagos built us. We actively invest in the people and places that made Mobilin possible.</p>
+          </div>
+          <div class="bg-cream rounded-2xl p-8">
+            <span class="font-serif font-black text-6xl text-bark/10 block mb-3">04</span>
+            <h3 class="font-serif font-bold text-xl text-bark mb-3">Consistency</h3>
+            <p class="text-bark/55 text-sm leading-relaxed">Your tenth order should be exactly as good as your first. We build systems that guarantee it.</p>
+          </div>
+          <div class="bg-cream rounded-2xl p-8">
+            <span class="font-serif font-black text-6xl text-bark/10 block mb-3">05</span>
+            <h3 class="font-serif font-bold text-xl text-bark mb-3">Honesty</h3>
+            <p class="text-bark/55 text-sm leading-relaxed">No buzzwords. No inflated claims. Just honest products that do exactly what we say they do.</p>
+          </div>
+          <div class="bg-cream rounded-2xl p-8">
+            <span class="font-serif font-black text-6xl text-bark/10 block mb-3">06</span>
+            <h3 class="font-serif font-bold text-xl text-bark mb-3">Growth</h3>
+            <p class="text-bark/55 text-sm leading-relaxed">We're always learning — from customers, from mistakes, from the world. Comfortable with being uncomfortable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="py-28 px-6 lg:px-12 max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-xs font-semibold uppercase tracking-widest text-ember mb-3">The people</p>
+        <h2 class="font-serif font-black text-4xl sm:text-5xl text-bark">Meet the team</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="aspect-square rounded-2xl overflow-hidden bg-sand mb-5">
+            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&q=80" alt="Tolu Adeyemi" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-serif font-bold text-lg text-bark">Tolu Adeyemi</h3>
+          <p class="text-ember text-xs font-semibold uppercase tracking-wider mt-1">Founder & CEO</p>
+        </div>
+        <div class="text-center">
+          <div class="aspect-square rounded-2xl overflow-hidden bg-sand mb-5">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Chidi Okafor" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-serif font-bold text-lg text-bark">Chidi Okafor</h3>
+          <p class="text-ember text-xs font-semibold uppercase tracking-wider mt-1">Head of Production</p>
+        </div>
+        <div class="text-center">
+          <div class="aspect-square rounded-2xl overflow-hidden bg-sand mb-5">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Zara Bello" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-serif font-bold text-lg text-bark">Zara Bello</h3>
+          <p class="text-ember text-xs font-semibold uppercase tracking-wider mt-1">Head of Brand</p>
+        </div>
+        <div class="text-center">
+          <div class="aspect-square rounded-2xl overflow-hidden bg-sand mb-5">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Dare Fashola" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-serif font-bold text-lg text-bark">Dare Fashola</h3>
+          <p class="text-ember text-xs font-semibold uppercase tracking-wider mt-1">Operations Lead</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-bark py-24 px-6 lg:px-12 text-center">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="font-serif font-black text-4xl sm:text-5xl text-cream mb-6 leading-tight">
+          Good products, made<br />by good people.
+        </h2>
+        <p class="text-cream/50 mb-10 leading-relaxed">That's the whole idea. Come see what we've built.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="products.html" class="inline-flex items-center gap-2 bg-ember text-cream font-semibold px-7 py-4 rounded-full hover:bg-ember/80 transition-colors duration-300">
+            Shop products <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <a href="contact.html" class="inline-flex items-center gap-2 border border-cream/25 text-cream font-semibold px-7 py-4 rounded-full hover:border-cream/60 transition-colors duration-300">
+            Get in touch
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-bark text-cream border-t border-cream/10 pt-16 pb-8 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div class="lg:col-span-2">
+        <a href="index.html" class="font-serif font-black text-2xl tracking-tight block mb-4">MOBILIN</a>
+        <p class="text-cream/50 text-sm leading-relaxed max-w-xs">Crafted in Lagos. Built for people who believe quality isn't a luxury — it's a standard.</p>
+        <div class="flex items-center gap-4 mt-6">
+          <a href="#" aria-label="Instagram" class="text-cream/40 hover:text-cream transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+          <a href="#" aria-label="Twitter"   class="text-cream/40 hover:text-cream transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+          <a href="#" aria-label="Facebook"  class="text-cream/40 hover:text-cream transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-cream/40 mb-5">Navigate</p>
+        <ul class="space-y-3 text-sm text-cream/60">
+          <li><a href="index.html"    class="hover:text-cream transition-colors">Home</a></li>
+          <li><a href="about.html"   class="hover:text-cream transition-colors">About</a></li>
+          <li><a href="products.html" class="hover:text-cream transition-colors">Products</a></li>
+          <li><a href="contact.html" class="hover:text-cream transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-cream/40 mb-5">Contact</p>
+        <ul class="space-y-3 text-sm text-cream/60">
+          <li class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5 shrink-0 text-ember"></i> 14 Brand Street, Lekki Phase 1, Lagos</li>
+          <li class="flex items-center gap-2"><i data-lucide="mail"    class="w-4 h-4 shrink-0 text-ember"></i> hello@mobilin.ng</li>
+          <li class="flex items-center gap-2"><i data-lucide="phone"   class="w-4 h-4 shrink-0 text-ember"></i> +234 800 000 0000</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-cream/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream/30">
+      <p>&copy; 2026 Mobilin. All rights reserved.</p>
+      <p>Lagos, Nigeria</p>
+    </div>
+  </footer>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>

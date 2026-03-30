@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mobilin — Crafted in Lagos</title>
+  <title>Mobilin — Healthy Snacks, Delivered Nationwide</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,6 +39,25 @@
     details summary::-webkit-details-marker { display:none; }
     .card-hover { transition: transform .4s ease, box-shadow .4s ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(59,47,37,.1); }
+
+    /* Hero video showcase */
+    @keyframes heroFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .hero-video-wrap {
+      animation: heroFloat 5s ease-in-out infinite;
+    }
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateY(30px) scale(.96); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .hero-fade-in {
+      animation: heroFadeIn .9s ease-out both;
+    }
+    .hero-fade-in-delay {
+      animation: heroFadeIn .9s ease-out .3s both;
+    }
   </style>
 </head>
 <body class="bg-cream text-bark font-sans antialiased">
@@ -117,48 +136,81 @@
       <div class="absolute -top-20 -right-20 w-80 h-80 sm:w-[500px] sm:h-[500px] rounded-full bg-sand pointer-events-none"></div>
       <div class="absolute top-1/2 -right-10 w-40 h-40 rounded-full bg-ember/8 pointer-events-none"></div>
 
-      <div class="relative z-10 max-w-4xl py-16 sm:py-24">
-        <!-- mini social proof -->
-        <div class="inline-flex flex-wrap items-center gap-3 mb-8 bg-sand rounded-full px-4 py-2">
-          <div class="flex">
-            <i data-lucide="star" class="w-3.5 h-3.5 text-ember fill-ember"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 text-ember fill-ember"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 text-ember fill-ember"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 text-ember fill-ember"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 text-ember fill-ember"></i>
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center py-16 sm:py-24">
+
+        <!-- Left: Text content -->
+        <div class="hero-fade-in order-2 lg:order-1">
+          <!-- mini social proof -->
+          <div class="inline-flex flex-wrap items-center gap-3 mb-8 bg-sand rounded-full px-4 py-2">
+            <div class="flex">
+              <i data-lucide="star" class="w-3.5 h-3.5 text-ember fill-ember"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 text-ember fill-ember"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 text-ember fill-ember"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 text-ember fill-ember"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 text-ember fill-ember"></i>
+            </div>
+            <span class="text-xs font-semibold text-bark">4.9 · Trusted by 12,000+ customers nationwide</span>
           </div>
-          <span class="text-xs font-semibold text-bark">4.9 · Trusted by 12,000+ customers in Lagos</span>
+
+          <h1 class="font-serif font-black text-[clamp(42px,8vw,96px)] leading-[.96] text-bark mb-7">
+            Healthy snacks,<br />
+            <em class="not-italic text-ember">made</em><br />
+            for you.
+          </h1>
+          <p class="text-bark/55 text-lg sm:text-xl max-w-md leading-relaxed mb-10 font-light">
+            Premium cheese balls, cornflakes & wholesome snacks — crafted with 100% natural ingredients and delivered anywhere in Nigeria.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="products.html" class="inline-flex items-center justify-center gap-2 bg-bark text-cream font-bold px-8 py-4 rounded-full hover:bg-ember transition-colors duration-300 text-sm">
+              Shop the collection <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="https://wa.me/2348000000000" class="inline-flex items-center justify-center gap-2 bg-[#25D366]/10 text-[#128C7E] font-bold px-8 py-4 rounded-full hover:bg-[#25D366]/20 transition-colors duration-300 text-sm border border-[#25D366]/20">
+              <i data-lucide="message-circle" class="w-4 h-4"></i> Order on WhatsApp
+            </a>
+          </div>
+
+          <!-- trust pills -->
+          <div class="flex flex-wrap gap-2 mt-8">
+            <span class="inline-flex items-center gap-1.5 bg-cream border border-bark/12 text-bark/60 text-xs font-medium px-3 py-1.5 rounded-full">
+              <i data-lucide="heart-pulse" class="w-3.5 h-3.5 text-moss"></i> Health-first recipes
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-cream border border-bark/12 text-bark/60 text-xs font-medium px-3 py-1.5 rounded-full">
+              <i data-lucide="truck" class="w-3.5 h-3.5 text-moss"></i> Nationwide delivery
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-cream border border-bark/12 text-bark/60 text-xs font-medium px-3 py-1.5 rounded-full">
+              <i data-lucide="leaf" class="w-3.5 h-3.5 text-moss"></i> 100% natural ingredients
+            </span>
+          </div>
         </div>
 
-        <h1 class="font-serif font-black text-[clamp(52px,10vw,108px)] leading-[.96] text-bark mb-7">
-          Good things,<br />
-          <em class="not-italic text-ember">crafted</em><br />
-          with care.
-        </h1>
-        <p class="text-bark/55 text-lg sm:text-xl max-w-md leading-relaxed mb-10 font-light">
-          Premium products made right here in Lagos — for people who know the difference quality makes.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a href="products.html" class="inline-flex items-center justify-center gap-2 bg-bark text-cream font-bold px-8 py-4 rounded-full hover:bg-ember transition-colors duration-300 text-sm">
-            Shop the collection <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
-          <a href="https://wa.me/2348000000000" class="inline-flex items-center justify-center gap-2 bg-[#25D366]/10 text-[#128C7E] font-bold px-8 py-4 rounded-full hover:bg-[#25D366]/20 transition-colors duration-300 text-sm border border-[#25D366]/20">
-            <i data-lucide="message-circle" class="w-4 h-4"></i> Order on WhatsApp
-          </a>
+        <!-- Right: Product showcase video -->
+        <div class="hero-fade-in-delay order-1 lg:order-2 flex justify-center lg:justify-end">
+          <div class="hero-video-wrap relative w-full max-w-[420px] lg:max-w-none">
+            <!-- Decorative ring behind video -->
+            <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-ember/20 via-sand to-moss/15 blur-xl opacity-60 pointer-events-none"></div>
+            <div class="relative rounded-[1.5rem] overflow-hidden shadow-[0_24px_64px_rgba(59,47,37,.18)] border-2 border-bark/8 bg-sand">
+              <video
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="auto"
+                class="w-full h-auto block"
+                aria-label="Mobilin product showcase"
+              >
+                <source src="asset/mobilin.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <!-- Subtle overlay badge -->
+              <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                <span class="bg-bark/80 backdrop-blur-md text-cream text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
+                  <i data-lucide="play-circle" class="w-3 h-3 inline-block mr-1 align-[-2px]"></i> Our Products
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- trust pills -->
-        <div class="flex flex-wrap gap-2 mt-8">
-          <span class="inline-flex items-center gap-1.5 bg-cream border border-bark/12 text-bark/60 text-xs font-medium px-3 py-1.5 rounded-full">
-            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-moss"></i> Quality guaranteed
-          </span>
-          <span class="inline-flex items-center gap-1.5 bg-cream border border-bark/12 text-bark/60 text-xs font-medium px-3 py-1.5 rounded-full">
-            <i data-lucide="truck" class="w-3.5 h-3.5 text-moss"></i> Lagos delivery 24h
-          </span>
-          <span class="inline-flex items-center gap-1.5 bg-cream border border-bark/12 text-bark/60 text-xs font-medium px-3 py-1.5 rounded-full">
-            <i data-lucide="leaf" class="w-3.5 h-3.5 text-moss"></i> 100% natural
-          </span>
-        </div>
       </div>
 
       <!-- scroll hint -->
@@ -175,8 +227,8 @@
           <p class="text-cream/45 text-xs mt-1 font-medium uppercase tracking-wider">Happy customers</p>
         </div>
         <div class="sm:px-8 text-center sm:text-left">
-          <p class="font-serif font-black text-3xl sm:text-4xl text-cream">4.9<span class="text-ember">★</span></p>
-          <p class="text-cream/45 text-xs mt-1 font-medium uppercase tracking-wider">Average rating</p>
+          <p class="font-serif font-black text-3xl sm:text-4xl text-cream">36<span class="text-ember">+</span></p>
+          <p class="text-cream/45 text-xs mt-1 font-medium uppercase tracking-wider">States delivered to</p>
         </div>
         <div class="sm:px-8 text-center sm:text-left">
           <p class="font-serif font-black text-3xl sm:text-4xl text-cream">5<span class="text-ember">+</span></p>
@@ -192,16 +244,16 @@
     <!-- MARQUEE -->
     <div class="bg-ember py-4 overflow-hidden">
       <div class="marquee-track text-cream font-serif italic text-base sm:text-lg font-light select-none">
-        <span class="px-8">Quality you can taste &nbsp;·&nbsp;</span>
-        <span class="px-8">Made in Lagos &nbsp;·&nbsp;</span>
-        <span class="px-8">Crafted with intention &nbsp;·&nbsp;</span>
-        <span class="px-8">Rooted in tradition &nbsp;·&nbsp;</span>
-        <span class="px-8">Built for the world &nbsp;·&nbsp;</span>
-        <span class="px-8">Quality you can taste &nbsp;·&nbsp;</span>
-        <span class="px-8">Made in Lagos &nbsp;·&nbsp;</span>
-        <span class="px-8">Crafted with intention &nbsp;·&nbsp;</span>
-        <span class="px-8">Rooted in tradition &nbsp;·&nbsp;</span>
-        <span class="px-8">Built for the world &nbsp;·&nbsp;</span>
+        <span class="px-8">Healthy snacking, redefined &nbsp;·&nbsp;</span>
+        <span class="px-8">Made in Lagos, delivered everywhere &nbsp;·&nbsp;</span>
+        <span class="px-8">Your health is our priority &nbsp;·&nbsp;</span>
+        <span class="px-8">100% natural ingredients &nbsp;·&nbsp;</span>
+        <span class="px-8">Eat well, live well &nbsp;·&nbsp;</span>
+        <span class="px-8">Healthy snacking, redefined &nbsp;·&nbsp;</span>
+        <span class="px-8">Made in Lagos, delivered everywhere &nbsp;·&nbsp;</span>
+        <span class="px-8">Your health is our priority &nbsp;·&nbsp;</span>
+        <span class="px-8">100% natural ingredients &nbsp;·&nbsp;</span>
+        <span class="px-8">Eat well, live well &nbsp;·&nbsp;</span>
       </div>
     </div>
 
@@ -210,7 +262,7 @@
       <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-5">
         <div>
           <p class="text-xs font-bold uppercase tracking-widest text-ember mb-3">Our Products</p>
-          <h2 class="font-serif font-black text-4xl sm:text-5xl text-bark leading-tight">The line-up</h2>
+          <h2 class="font-serif font-black text-4xl sm:text-5xl text-bark leading-tight">Our healthy snacks</h2>
         </div>
         <a href="products.html" class="self-start sm:self-auto inline-flex items-center gap-2 text-sm font-bold text-bark border-b-2 border-bark/25 pb-0.5 hover:text-ember hover:border-ember transition-colors">
           View all products <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -225,8 +277,8 @@
           </div>
           <div class="p-6 sm:p-7">
             <p class="text-[10px] font-bold uppercase tracking-widest text-ember mb-2">Signature</p>
-            <h3 class="font-serif font-bold text-xl text-bark mb-2">Classic Original</h3>
-            <p class="text-bark/55 text-sm leading-relaxed mb-5">Our flagship — the one that started it all. Minimal ingredients, maximum flavour. Unchanged since day one.</p>
+            <h3 class="font-serif font-bold text-xl text-bark mb-2">Classic Cheese Balls</h3>
+            <p class="text-bark/55 text-sm leading-relaxed mb-5">Our flagship cheese balls — baked, not fried, with real cheese and zero artificial flavours. Crunchy, wholesome, and guilt-free.</p>
             <div class="flex items-center justify-between">
               <div>
                 <span class="font-black text-bark text-xl">₦3,500</span>
@@ -245,9 +297,9 @@
             <span class="absolute top-4 left-4 bg-ember text-cream text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">Limited</span>
           </div>
           <div class="p-6 sm:p-7">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-ember mb-2">Limited Edition</p>
-            <h3 class="font-serif font-bold text-xl text-bark mb-2">Reserve Edition</h3>
-            <p class="text-bark/55 text-sm leading-relaxed mb-5">Small-batch. Seasonal. Made quarterly for those who appreciate the rare and refined. Low stock.</p>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-ember mb-2">Wholesome</p>
+            <h3 class="font-serif font-bold text-xl text-bark mb-2">Honey Oat Cornflakes</h3>
+            <p class="text-bark/55 text-sm leading-relaxed mb-5">Crunchy cornflakes sweetened with real honey and toasted oats. A nutritious breakfast that keeps you energised all morning.</p>
             <div class="flex items-center justify-between">
               <div>
                 <span class="font-black text-bark text-xl">₦5,200</span>
@@ -266,9 +318,9 @@
             <span class="absolute top-4 left-4 bg-moss text-cream text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">Everyday</span>
           </div>
           <div class="p-6 sm:p-7">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-ember mb-2">Daily</p>
-            <h3 class="font-serif font-bold text-xl text-bark mb-2">Daily Ritual</h3>
-            <p class="text-bark/55 text-sm leading-relaxed mb-5">Designed for your everyday — effortless, dependable, and satisfying. The one you reach for without thinking.</p>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-ember mb-2">Everyday</p>
+            <h3 class="font-serif font-bold text-xl text-bark mb-2">Nutty Granola Mix</h3>
+            <p class="text-bark/55 text-sm leading-relaxed mb-5">A wholesome blend of roasted nuts, seeds & dried fruits. Perfect for snacking on the go or topping your morning yoghurt.</p>
             <div class="flex items-center justify-between">
               <div>
                 <span class="font-black text-bark text-xl">₦2,800</span>
@@ -290,7 +342,7 @@
         <div class="text-center mb-16">
           <p class="text-xs font-bold uppercase tracking-widest text-ember mb-3">Simple process</p>
           <h2 class="font-serif font-black text-4xl sm:text-5xl text-bark">How to order</h2>
-          <p class="text-bark/50 mt-4 max-w-md mx-auto text-sm leading-relaxed">Getting your Mobilin products is straightforward. No complicated checkout. Just real people, real products.</p>
+          <p class="text-bark/50 mt-4 max-w-md mx-auto text-sm leading-relaxed">Getting healthy snacks delivered to your doorstep is easy — wherever you are in Nigeria.</p>
         </div>
         <div class="grid sm:grid-cols-3 gap-6 relative">
           <!-- connector line desktop -->
@@ -309,7 +361,7 @@
             </div>
             <div class="absolute top-8 right-8 font-serif font-black text-6xl text-bark/5">02</div>
             <h3 class="font-serif font-bold text-lg text-bark mb-3">Reach Out</h3>
-            <p class="text-bark/55 text-sm leading-relaxed">WhatsApp us or fill the contact form. Tell us what you want and where you are. We'll confirm everything.</p>
+            <p class="text-bark/55 text-sm leading-relaxed">WhatsApp us or fill the contact form. Tell us what you want and your delivery location anywhere in Nigeria.</p>
           </div>
           <div class="bg-cream rounded-3xl p-8 text-center relative">
             <div class="w-16 h-16 bg-moss rounded-2xl flex items-center justify-center mx-auto mb-6 relative z-10">
@@ -317,7 +369,7 @@
             </div>
             <div class="absolute top-8 right-8 font-serif font-black text-6xl text-bark/5">03</div>
             <h3 class="font-serif font-bold text-lg text-bark mb-3">Pay & Receive</h3>
-            <p class="text-bark/55 text-sm leading-relaxed">Pay on delivery or via bank transfer. We dispatch within 24 hours. Lagos-wide delivery, nationwide available.</p>
+            <p class="text-bark/55 text-sm leading-relaxed">Pay on delivery or via bank transfer. We dispatch within 24 hours and deliver nationwide — Lagos, Abuja, PH, and beyond.</p>
           </div>
         </div>
         <div class="mt-10 text-center">
@@ -334,13 +386,13 @@
         <div>
           <p class="text-xs font-bold uppercase tracking-widest text-ember mb-5">Our Promise</p>
           <h2 class="font-serif font-black text-4xl sm:text-5xl lg:text-6xl text-cream leading-tight">
-            We don't cut corners.<br />
-            <em class="not-italic text-ember">We never will.</em>
+            Your health comes first.<br />
+            <em class="not-italic text-ember">Always.</em>
           </h2>
         </div>
         <div class="space-y-6 text-cream/65 text-lg leading-relaxed font-light">
-          <p>At Mobilin, every product starts with a question: would we be proud to hand this to someone we love? If the answer isn't an immediate yes, it doesn't ship.</p>
-          <p>Lagos taught us resilience. Our customers taught us that quality is never optional. Both lessons live inside everything we make.</p>
+          <p>At Mobilin, every snack starts with one question: is this genuinely good for you? We use only natural ingredients — no preservatives, no artificial colours, no shortcuts. Because healthy eating should never mean sacrificing taste.</p>
+          <p>From our kitchen in Lagos to doorsteps across Nigeria, we're on a mission to make sure everyone has access to snacks that nourish, not just fill.</p>
           <a href="about.html" class="inline-flex items-center gap-2 text-cream font-bold text-sm border-b border-cream/25 pb-0.5 hover:border-ember hover:text-ember transition-colors">
             Read our full story <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
@@ -374,12 +426,12 @@
             <i data-lucide="star" class="w-4 h-4 text-ember fill-ember"></i>
             <i data-lucide="star" class="w-4 h-4 text-ember fill-ember"></i>
           </div>
-          <p class="text-bark/70 text-sm leading-relaxed flex-1">"I've tried many brands but Mobilin is different. You can tell they genuinely care. The quality is so consistent — every single order. Won't be switching anytime soon."</p>
+          <p class="text-bark/70 text-sm leading-relaxed flex-1">"My kids love the cheese balls and I love that they're eating something healthy. No artificial anything — just real, delicious snacks. We order every month without fail."</p>
           <div class="flex items-center gap-3 pt-2 border-t border-bark/8">
             <img src="https://i.pravatar.cc/48?img=1" alt="Adaeze" class="w-11 h-11 rounded-full object-cover" />
             <div>
               <p class="font-bold text-bark text-sm">Adaeze O.</p>
-              <p class="text-bark/40 text-xs">Lagos Island · Verified customer</p>
+              <p class="text-bark/40 text-xs">Lagos · Verified customer</p>
             </div>
           </div>
         </div>
@@ -391,12 +443,12 @@
             <i data-lucide="star" class="w-4 h-4 text-ember fill-ember"></i>
             <i data-lucide="star" class="w-4 h-4 text-ember fill-ember"></i>
           </div>
-          <p class="text-bark/70 text-sm leading-relaxed flex-1">"Got the Reserve Edition as a gift and I was genuinely impressed. The packaging, the quality — felt premium without being pretentious. This is Lagos at its best."</p>
+          <p class="text-bark/70 text-sm leading-relaxed flex-1">"I ordered the cornflakes and granola mix from Abuja and it arrived perfectly packaged within 3 days. Finally, healthy snacks that actually taste amazing — and they deliver nationwide!"</p>
           <div class="flex items-center gap-3 pt-2 border-t border-bark/8">
             <img src="https://i.pravatar.cc/48?img=5" alt="Emeka" class="w-11 h-11 rounded-full object-cover" />
             <div>
               <p class="font-bold text-bark text-sm">Emeka T.</p>
-              <p class="text-bark/40 text-xs">Victoria Island · Verified customer</p>
+              <p class="text-bark/40 text-xs">Abuja · Verified customer</p>
             </div>
           </div>
         </div>
@@ -408,12 +460,12 @@
             <i data-lucide="star" class="w-4 h-4 text-ember fill-ember"></i>
             <i data-lucide="star" class="w-4 h-4 text-ember fill-ember"></i>
           </div>
-          <p class="text-bark/70 text-sm leading-relaxed flex-1">"Finally a Lagos brand that takes consistency seriously. Every order is exactly what I expected — and then some. The delivery is fast too. Customer service is excellent."</p>
+          <p class="text-bark/70 text-sm leading-relaxed flex-1">"As a nutritionist, I'm very particular about what I recommend. Mobilin's snacks tick every box — natural ingredients, no preservatives, and they taste incredible. I recommend them to all my clients."</p>
           <div class="flex items-center gap-3 pt-2 border-t border-bark/8">
             <img src="https://i.pravatar.cc/48?img=9" alt="Funke" class="w-11 h-11 rounded-full object-cover" />
             <div>
               <p class="font-bold text-bark text-sm">Funke B.</p>
-              <p class="text-bark/40 text-xs">Lekki · Verified customer</p>
+              <p class="text-bark/40 text-xs">Port Harcourt · Verified customer</p>
             </div>
           </div>
         </div>
@@ -432,29 +484,29 @@
             <div class="w-12 h-12 bg-ember/12 rounded-2xl flex items-center justify-center mb-6">
               <i data-lucide="leaf" class="w-6 h-6 text-ember"></i>
             </div>
-            <h3 class="font-serif font-bold text-lg text-bark mb-2">Natural First</h3>
-            <p class="text-bark/55 text-sm leading-relaxed">Real, traceable ingredients. Nothing artificial. No exceptions.</p>
+            <h3 class="font-serif font-bold text-lg text-bark mb-2">Health First</h3>
+            <p class="text-bark/55 text-sm leading-relaxed">Every recipe is designed with your health in mind. No artificial colours, flavours, or preservatives.</p>
+          </div>
+          <div class="bg-cream rounded-3xl p-7">
+            <div class="w-12 h-12 bg-ember/12 rounded-2xl flex items-center justify-center mb-6">
+              <i data-lucide="truck" class="w-6 h-6 text-ember"></i>
+            </div>
+            <h3 class="font-serif font-bold text-lg text-bark mb-2">Nationwide Delivery</h3>
+            <p class="text-bark/55 text-sm leading-relaxed">We deliver to every state in Nigeria. Lagos, Abuja, Port Harcourt, Kano — wherever you are.</p>
           </div>
           <div class="bg-cream rounded-3xl p-7">
             <div class="w-12 h-12 bg-ember/12 rounded-2xl flex items-center justify-center mb-6">
               <i data-lucide="shield-check" class="w-6 h-6 text-ember"></i>
             </div>
             <h3 class="font-serif font-bold text-lg text-bark mb-2">Quality Assured</h3>
-            <p class="text-bark/55 text-sm leading-relaxed">Every batch is tested before it ever reaches your hands. Always.</p>
+            <p class="text-bark/55 text-sm leading-relaxed">Every batch is tested before it ships. Not satisfied? Full refund within 7 days.</p>
           </div>
           <div class="bg-cream rounded-3xl p-7">
             <div class="w-12 h-12 bg-ember/12 rounded-2xl flex items-center justify-center mb-6">
-              <i data-lucide="refresh-ccw" class="w-6 h-6 text-ember"></i>
+              <i data-lucide="heart" class="w-6 h-6 text-ember"></i>
             </div>
-            <h3 class="font-serif font-bold text-lg text-bark mb-2">Easy Returns</h3>
-            <p class="text-bark/55 text-sm leading-relaxed">Not satisfied? Full refund within 7 days. No runaround, no stress.</p>
-          </div>
-          <div class="bg-cream rounded-3xl p-7">
-            <div class="w-12 h-12 bg-ember/12 rounded-2xl flex items-center justify-center mb-6">
-              <i data-lucide="heart-handshake" class="w-6 h-6 text-ember"></i>
-            </div>
-            <h3 class="font-serif font-bold text-lg text-bark mb-2">Lagos Rooted</h3>
-            <p class="text-bark/55 text-sm leading-relaxed">A Lagos business, through and through. We invest back in the community that built us.</p>
+            <h3 class="font-serif font-bold text-lg text-bark mb-2">Everyone Eats Healthy</h3>
+            <p class="text-bark/55 text-sm leading-relaxed">Our mission is simple — make healthy eating accessible and delicious for every Nigerian.</p>
           </div>
         </div>
       </div>
@@ -486,7 +538,7 @@
       <div class="max-w-2xl mx-auto text-center">
         <p class="text-xs font-bold uppercase tracking-widest text-ember mb-4">Stay in the loop</p>
         <h2 class="font-serif font-black text-3xl sm:text-4xl text-cream mb-4 leading-tight">New drops. Special offers.<br />Right to your inbox.</h2>
-        <p class="text-cream/45 text-sm mb-8">No spam. Just the good stuff — new products, exclusive deals, and updates from the Mobilin kitchen.</p>
+        <p class="text-cream/45 text-sm mb-8">No spam. Just the good stuff — new healthy snack drops, exclusive deals, nutrition tips, and updates from the Mobilin kitchen.</p>
         <form class="flex flex-col sm:flex-row gap-3" onsubmit="handleNewsletter(event)">
           <input type="email" placeholder="Enter your email address" required
             class="flex-1 bg-cream/10 border border-cream/15 text-cream placeholder:text-cream/30 rounded-full px-5 py-4 text-sm focus:outline-none focus:border-ember transition-colors" />
@@ -503,8 +555,8 @@
     <section class="py-24 px-5 lg:px-12 max-w-7xl mx-auto text-center">
       <p class="text-xs font-bold uppercase tracking-widest text-ember mb-5">Ready?</p>
       <h2 class="font-serif font-black text-4xl sm:text-5xl lg:text-6xl text-bark mb-8 leading-tight">
-        Try Mobilin today.<br />
-        <em class="not-italic text-bark/30">You won't regret it.</em>
+        Start eating healthier today.<br />
+        <em class="not-italic text-bark/30">Delivered to your door.</em>
       </h2>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
         <a href="products.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-bark text-cream font-bold px-8 py-4 rounded-full hover:bg-ember transition-colors duration-300 text-sm">
@@ -523,7 +575,7 @@
     <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
       <div class="lg:col-span-2">
         <a href="index.html" class="font-serif font-black text-2xl tracking-tight block mb-4">MOBILIN</a>
-        <p class="text-cream/45 text-sm leading-relaxed max-w-xs mb-6">Crafted in Lagos. Built for people who believe quality isn't a luxury — it's a standard.</p>
+        <p class="text-cream/45 text-sm leading-relaxed max-w-xs mb-6">Healthy snacks made in Lagos, delivered nationwide. Because everyone deserves to eat well.</p>
         <a href="https://wa.me/2348000000000" class="inline-flex items-center gap-2 bg-[#25D366]/20 text-[#25D366] font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-[#25D366]/30 transition-colors mb-6">
           <i data-lucide="message-circle" class="w-4 h-4"></i> Chat on WhatsApp
         </a>
@@ -554,7 +606,7 @@
     </div>
     <div class="border-t border-cream/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream/25">
       <p>&copy; 2026 Mobilin. All rights reserved.</p>
-      <p class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3 h-3"></i> Lagos, Nigeria</p>
+      <p class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3 h-3"></i> Made in Lagos · Delivered Nationwide</p>
     </div>
   </footer>
 

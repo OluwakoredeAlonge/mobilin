@@ -3,75 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — Mobilin | Healthy Snacks for Everyone</title>
+  <title>About — Mobiliin | Our Story, Made in Lagos</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            cream: '#F7F3EE',
-            sand:  '#EDE6D9',
-            bark:  '#3B2F25',
-            ember: '#C0622A',
-            moss:  '#3D5A44',
-          },
-          fontFamily: {
-            serif: ['Fraunces', 'Georgia', 'serif'],
-            sans:  ['Inter', 'sans-serif'],
-          },
+          colors: { cream:'#F7F3EE', sand:'#EDE6D9', bark:'#3B2F25', ember:'#C0622A', moss:'#3D5A44' },
+          fontFamily: { serif:['Fraunces','Georgia','serif'], sans:['Inter','sans-serif'] },
         },
       },
     }
   </script>
   <style>
     html { scroll-behavior: smooth; }
-    .nav-link { position: relative; }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -2px; left: 0;
-      width: 0; height: 1px;
-      background: currentColor;
-      transition: width .3s ease;
-    }
-    .nav-link:hover::after { width: 100%; }
-    .drawer-open { transform: translateX(0) !important; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1.5px; background:currentColor; transition:width .3s ease; }
+    .nav-link:hover::after, .nav-link.active::after { width:100%; }
+    .drawer-open  { transform:translateX(0) !important; }
     .overlay-open { opacity:1 !important; pointer-events:auto !important; }
   </style>
 </head>
 <body class="bg-cream text-bark font-sans antialiased">
 
   <!-- MOBILE DRAWER OVERLAY -->
-  <div id="drawer-overlay" class="fixed inset-0 z-[60] bg-bark/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 md:hidden" aria-hidden="true"></div>
+  <div id="drawer-overlay" class="fixed inset-0 z-[60] bg-bark/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
 
   <!-- MOBILE DRAWER -->
-  <div id="mobile-drawer" class="fixed top-0 right-0 z-[70] h-full w-[320px] max-w-[90vw] bg-cream translate-x-full transition-transform duration-300 ease-out md:hidden flex flex-col shadow-2xl" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div id="mobile-drawer" class="fixed top-0 right-0 z-[70] h-full w-[320px] max-w-[90vw] bg-cream translate-x-full transition-transform duration-300 ease-out md:hidden flex flex-col shadow-2xl">
     <div class="flex items-center justify-between px-6 h-16 border-b border-bark/10 shrink-0">
-      <span class="font-serif font-black text-xl text-bark tracking-tight">MOBILIN</span>
+      <span class="font-serif font-black text-xl text-bark tracking-tight">MOBILIIN</span>
       <button id="close-drawer" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-sand transition-colors" aria-label="Close menu">
         <i data-lucide="x" class="w-5 h-5 text-bark"></i>
       </button>
     </div>
     <nav class="flex-1 overflow-y-auto px-6 py-4">
       <a href="index.html"     class="flex items-center justify-between py-4 border-b border-bark/8 text-base font-semibold text-bark hover:text-ember transition-colors">Home <i data-lucide="chevron-right" class="w-4 h-4 text-bark/30"></i></a>
-      <a href="about.html"    class="flex items-center justify-between py-4 border-b border-bark/8 text-base font-semibold text-bark hover:text-ember transition-colors">About <i data-lucide="chevron-right" class="w-4 h-4 text-bark/30"></i></a>
+      <a href="about.html"    class="flex items-center justify-between py-4 border-b border-bark/8 text-base font-semibold text-ember transition-colors">About <i data-lucide="chevron-right" class="w-4 h-4 text-ember/30"></i></a>
       <a href="products.html" class="flex items-center justify-between py-4 border-b border-bark/8 text-base font-semibold text-bark hover:text-ember transition-colors">Products <i data-lucide="chevron-right" class="w-4 h-4 text-bark/30"></i></a>
       <a href="contact.html"  class="flex items-center justify-between py-4 border-b border-bark/8 text-base font-semibold text-bark hover:text-ember transition-colors">Contact <i data-lucide="chevron-right" class="w-4 h-4 text-bark/30"></i></a>
       <div class="mt-8 space-y-3">
         <p class="text-xs font-semibold uppercase tracking-widest text-bark/40">Quick contact</p>
-        <a href="https://wa.me/2348000000000" class="flex items-center gap-3 text-sm text-bark/60 hover:text-ember transition-colors">
-          <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp us
-        </a>
-        <a href="tel:+2348000000000" class="flex items-center gap-3 text-sm text-bark/60 hover:text-ember transition-colors">
-          <i data-lucide="phone" class="w-4 h-4"></i> +234 800 000 0000
-        </a>
-        <a href="mailto:hello@mobilin.ng" class="flex items-center gap-3 text-sm text-bark/60 hover:text-ember transition-colors">
-          <i data-lucide="mail" class="w-4 h-4"></i> hello@mobilin.ng
-        </a>
+        <a href="https://wa.me/2348000000000" class="flex items-center gap-3 text-sm text-bark/60 hover:text-ember transition-colors"><i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp us</a>
+        <a href="tel:+2348000000000"          class="flex items-center gap-3 text-sm text-bark/60 hover:text-ember transition-colors"><i data-lucide="phone" class="w-4 h-4"></i> +234 800 000 0000</a>
+        <a href="mailto:hello@mobiliin.ng"    class="flex items-center gap-3 text-sm text-bark/60 hover:text-ember transition-colors"><i data-lucide="mail" class="w-4 h-4"></i> hello@mobiliin.ng</a>
       </div>
     </nav>
     <div class="px-6 pb-8 pt-4 border-t border-bark/10 shrink-0 space-y-3">
@@ -87,98 +65,96 @@
   </div>
 
   <!-- NAV -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-bark/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
-      <a href="index.html" class="font-serif font-black text-xl tracking-tight text-bark">MOBILIN</a>
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-bark/70">
+  <header class="fixed top-0 inset-x-0 z-50 bg-cream/95 backdrop-blur-md border-b border-bark/10">
+    <div class="max-w-7xl mx-auto px-5 lg:px-12 h-16 flex items-center justify-between gap-4">
+      <a href="index.html" class="font-serif font-black text-xl tracking-tight text-bark shrink-0">MOBILIIN</a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-bark/65">
         <a href="index.html"    class="nav-link hover:text-bark transition-colors">Home</a>
-        <a href="about.html"   class="nav-link text-bark font-semibold">About</a>
+        <a href="about.html"   class="nav-link active text-bark font-semibold">About</a>
         <a href="products.html" class="nav-link hover:text-bark transition-colors">Products</a>
         <a href="contact.html" class="nav-link hover:text-bark transition-colors">Contact</a>
       </nav>
-      <a href="products.html" class="hidden md:inline-flex items-center gap-2 bg-bark text-cream text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-ember transition-colors duration-300">
-        Shop Now <i data-lucide="arrow-right" class="w-4 h-4"></i>
-      </a>
-      <button id="menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-sand transition-colors" aria-label="Open menu">
-        <i data-lucide="menu" class="w-5 h-5 text-bark"></i>
-      </button>
+      <div class="flex items-center gap-3">
+        <a href="products.html" class="hidden md:inline-flex items-center gap-2 bg-bark text-cream text-sm font-bold px-5 py-2.5 rounded-full hover:bg-ember transition-colors duration-300">
+          Order Now <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <button id="menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-sand transition-colors" aria-label="Open menu">
+          <i data-lucide="menu" class="w-5 h-5 text-bark"></i>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main class="pt-16">
+  <main class="pt-16 pb-24 md:pb-0">
 
     <!-- PAGE HEADER -->
-    <section class="bg-bark text-cream py-24 px-6 lg:px-12">
+    <section class="bg-bark text-cream py-24 sm:py-32 px-5 lg:px-12">
       <div class="max-w-7xl mx-auto">
-        <div class="flex items-center gap-2 text-ember text-xs font-semibold uppercase tracking-widest mb-6">
-          <i data-lucide="heart" class="w-3.5 h-3.5"></i> Healthy snacks, made for Nigeria
+        <div class="inline-flex items-center gap-2 text-ember text-xs font-bold uppercase tracking-widest mb-6">
+          <i data-lucide="heart" class="w-3.5 h-3.5"></i> Wholesome snacks, made for Nigeria
         </div>
         <h1 class="font-serif font-black text-5xl sm:text-6xl lg:text-7xl text-cream leading-tight max-w-3xl">
-          We're Mobilin.<br />
+          We're Mobiliin.<br />
           <em class="not-italic text-ember">Here's our story.</em>
         </h1>
+        <div class="mt-10 flex flex-wrap gap-6">
+          <div class="flex items-center gap-2 text-cream/45 text-sm"><i data-lucide="map-pin" class="w-4 h-4 text-ember"></i> Founded in Lagos, 2019</div>
+          <div class="flex items-center gap-2 text-cream/45 text-sm"><i data-lucide="users" class="w-4 h-4 text-ember"></i> 18-person team</div>
+          <div class="flex items-center gap-2 text-cream/45 text-sm"><i data-lucide="package" class="w-4 h-4 text-ember"></i> 5 signature snacks</div>
+          <div class="flex items-center gap-2 text-cream/45 text-sm"><i data-lucide="truck" class="w-4 h-4 text-ember"></i> Nationwide delivery</div>
+        </div>
       </div>
     </section>
 
     <!-- STORY — CHAPTER 1 -->
-    <section class="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
+    <section class="py-24 px-5 lg:px-12 max-w-7xl mx-auto">
       <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <div>
-          <p class="text-xs font-semibold uppercase tracking-widest text-ember mb-4">How it started</p>
+          <p class="text-xs font-bold uppercase tracking-widest text-ember mb-5">How it started</p>
           <h2 class="font-serif font-black text-3xl sm:text-4xl text-bark mb-8 leading-snug">
             A kitchen in Surulere.<br />A health-first mission.
           </h2>
-          <div class="space-y-5 text-bark/65 leading-relaxed">
+          <div class="space-y-5 text-bark/65 leading-relaxed text-sm sm:text-base">
             <p>
-              It started the way most real things do — not with a business plan, but with a concern.
-              Founder Tolu Adeyemi had spent years watching snack brands slowly fill their products
-              with artificial preservatives, colours, and cheap ingredients. The taste would change.
-              The nutrition would disappear. The thing that made it nourishing would vanish quietly.
+              It started the way most real things do — not with a business plan, but with a concern. Founder Tolu Adeyemi had spent years watching snack brands quietly fill their products with artificial preservatives, synthetic colours, and cheap ingredients. The taste would change. The nutrition would vanish. The thing that made it good would disappear without a word.
             </p>
             <p>
               She noticed. And she was tired of it.
             </p>
             <p>
-              In 2019, working out of her mother's kitchen in Surulere, Tolu began making snacks
-              the way she believed they should be made — real ingredients, no preservatives, health first.
-              Coconut bars made with real coconut. Oat bars sweetened with honey, not sugar. Krispies bars,
-              packed with actual nuts and seeds. She gave them to neighbours, to friends, to anyone
-              willing to give honest feedback.
-              The response was always the same: <em class="not-italic font-medium text-bark">"This is what healthy eating should taste like!"</em>
+              In 2019, working out of her mother's kitchen in Surulere, Tolu began making snacks the way she believed they should be made — real ingredients, no preservatives, health first. Coconut candy bars made with real coconut. Oat bars sweetened with honey. Krispies bars packed with clean, simple ingredients. Peanut brittle made the old-fashioned way. Corn cookies from actual corn flour.
+            </p>
+            <p>
+              She gave them to neighbours, friends, colleagues — anyone willing to give honest feedback. The response was always the same: <em class="not-italic font-semibold text-bark">"Why doesn't the supermarket sell this?"</em>
             </p>
           </div>
         </div>
-        <div class="rounded-2xl overflow-hidden aspect-[4/5] bg-sand">
-          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=80" alt="Founder in kitchen" class="w-full h-full object-cover" />
+        <div class="rounded-3xl overflow-hidden aspect-[4/5] bg-sand shadow-lg">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=80" alt="Founder crafting snacks" class="w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
     </section>
 
-    <!-- STORY — CHAPTER 2 (reversed) -->
-    <section class="py-8 pb-24 px-6 lg:px-12 max-w-7xl mx-auto">
+    <!-- STORY — CHAPTER 2 -->
+    <section class="pb-24 px-5 lg:px-12 max-w-7xl mx-auto">
       <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        <div class="rounded-2xl overflow-hidden aspect-[4/5] bg-sand order-2 lg:order-1">
-          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=700&q=80" alt="Products being made" class="w-full h-full object-cover" />
+        <div class="rounded-3xl overflow-hidden aspect-[4/5] bg-sand shadow-lg order-2 lg:order-1">
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=700&q=80" alt="Mobiliin production" class="w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="order-1 lg:order-2">
-          <p class="text-xs font-semibold uppercase tracking-widest text-ember mb-4">Growing up</p>
+          <p class="text-xs font-bold uppercase tracking-widest text-ember mb-5">Growing up</p>
           <h2 class="font-serif font-black text-3xl sm:text-4xl text-bark mb-8 leading-snug">
-            From Surulere<br />to every state in Nigeria.
+            From Surulere<br />to all 36 states.
           </h2>
-          <div class="space-y-5 text-bark/65 leading-relaxed">
+          <div class="space-y-5 text-bark/65 leading-relaxed text-sm sm:text-base">
             <p>
-              Word spread the way it only does when something is genuinely good. By 2021, Mobilin
-              had outgrown the kitchen and moved into a small production space in Yaba. The team
-              grew — carefully, deliberately. Every new person hired had to believe in the same thing:
-              that healthy eating shouldn't be a luxury, and that real ingredients are non-negotiable.
+              Word spread the way it only does when something is genuinely good. By 2021, Mobiliin had outgrown the kitchen and moved into a production space in Yaba. The team grew — carefully, deliberately. Every person hired had to believe the same thing: that healthy eating shouldn't be a luxury, and that real ingredients are non-negotiable.
             </p>
             <p>
-              Today, Mobilin delivers to all 36 states across Nigeria. From Lagos to Kano, from
-              Abuja to Port Harcourt — our healthy snacks find their way to every corner of the country.
-              Because we believe everyone, everywhere, deserves access to food that's genuinely good for them.
+              Today, Mobiliin delivers to all 36 states across Nigeria. From Lagos to Kano, from Abuja to Port Harcourt — our five handcrafted snacks find their way to every corner of the country.
             </p>
             <p>
-              The kitchen in Surulere is gone. The mission to feed Nigeria healthier hasn't.
+              The kitchen in Surulere is gone. The obsession with quality hasn't.
             </p>
           </div>
         </div>
@@ -186,149 +162,150 @@
     </section>
 
     <!-- NUMBERS -->
-    <section class="bg-sand py-20 px-6 lg:px-12">
+    <section class="bg-bark py-20 px-5 lg:px-12">
       <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-        <div class="py-8">
-          <p class="font-serif font-black text-5xl text-bark mb-2">2019</p>
-          <p class="text-xs font-semibold uppercase tracking-widest text-ember">Founded</p>
+        <div class="py-6">
+          <p class="font-serif font-black text-5xl sm:text-6xl text-cream mb-2">2019</p>
+          <p class="text-xs font-bold uppercase tracking-widest text-ember">Founded</p>
         </div>
-        <div class="py-8">
-          <p class="font-serif font-black text-5xl text-bark mb-2">12k+</p>
-          <p class="text-xs font-semibold uppercase tracking-widest text-ember">Customers nationwide</p>
+        <div class="py-6">
+          <p class="font-serif font-black text-5xl sm:text-6xl text-cream mb-2">12k<span class="text-ember">+</span></p>
+          <p class="text-xs font-bold uppercase tracking-widest text-ember">Customers</p>
         </div>
-        <div class="py-8">
-          <p class="font-serif font-black text-5xl text-bark mb-2">18</p>
-          <p class="text-xs font-semibold uppercase tracking-widest text-ember">Team members</p>
+        <div class="py-6">
+          <p class="font-serif font-black text-5xl sm:text-6xl text-cream mb-2">18</p>
+          <p class="text-xs font-bold uppercase tracking-widest text-ember">Team members</p>
         </div>
-        <div class="py-8">
-          <p class="font-serif font-black text-5xl text-bark mb-2">100%</p>
-          <p class="text-xs font-semibold uppercase tracking-widest text-ember">Natural ingredients</p>
+        <div class="py-6">
+          <p class="font-serif font-black text-5xl sm:text-6xl text-cream mb-2">5</p>
+          <p class="text-xs font-bold uppercase tracking-widest text-ember">Signature snacks</p>
         </div>
       </div>
     </section>
 
     <!-- MISSION + VISION -->
-    <section class="py-28 px-6 lg:px-12 max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-bark text-cream rounded-2xl p-10 lg:p-14">
-          <div class="w-10 h-10 bg-ember/20 rounded-xl flex items-center justify-center mb-8">
+    <section class="py-24 px-5 lg:px-12 max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="bg-bark text-cream rounded-3xl p-10 lg:p-14">
+          <div class="w-12 h-12 bg-ember/20 rounded-2xl flex items-center justify-center mb-8">
             <i data-lucide="target" class="w-5 h-5 text-ember"></i>
           </div>
-          <p class="text-xs font-semibold uppercase tracking-widest text-ember mb-4">Our Mission</p>
-          <h3 class="font-serif font-bold text-2xl text-cream mb-5 leading-snug">To make healthy eating accessible, delicious, and available to every Nigerian.</h3>
+          <p class="text-xs font-bold uppercase tracking-widest text-ember mb-4">Our Mission</p>
+          <h3 class="font-serif font-bold text-2xl text-cream mb-5 leading-snug">To make healthy snacking accessible, delicious, and available to every Nigerian.</h3>
           <p class="text-cream/55 leading-relaxed text-sm">
-            We believe everyone deserves snacks that are genuinely good for them — not just in Lagos,
-            but in every state across Nigeria. Our mission is to prove that healthy food can taste incredible,
-            and that eating well shouldn't require a premium price tag.
+            We believe everyone deserves snacks that are genuinely good for them — not just in Lagos, but in every state across Nigeria. Our mission is to prove that healthy food can taste incredible, and that eating well doesn't have to come at a premium.
           </p>
         </div>
-        <div class="bg-ember text-cream rounded-2xl p-10 lg:p-14">
-          <div class="w-10 h-10 bg-cream/20 rounded-xl flex items-center justify-center mb-8">
+        <div class="bg-ember text-cream rounded-3xl p-10 lg:p-14">
+          <div class="w-12 h-12 bg-cream/20 rounded-2xl flex items-center justify-center mb-8">
             <i data-lucide="eye" class="w-5 h-5 text-cream"></i>
           </div>
-          <p class="text-xs font-semibold uppercase tracking-widest text-cream/60 mb-4">Our Vision</p>
-          <h3 class="font-serif font-bold text-2xl text-cream mb-5 leading-snug">A Nigerian brand recognised globally for healthy, nutritious snacks.</h3>
+          <p class="text-xs font-bold uppercase tracking-widest text-cream/60 mb-4">Our Vision</p>
+          <h3 class="font-serif font-bold text-2xl text-cream mb-5 leading-snug">A Nigerian brand recognised globally for wholesome, honest snacks.</h3>
           <p class="text-cream/70 leading-relaxed text-sm">
-            We want Mobilin to be the name people think of when they think of healthy snacking in Nigeria.
-            Not just another local brand — but proof that you can nourish a whole nation with snacks
-            that are delicious, natural, and delivered right to your doorstep.
+            We want Mobiliin to be the name people think of when they think of healthy snacking — not just in Nigeria, but everywhere. Proof that a Lagos brand can stand shoulder-to-shoulder with the best in the world.
           </p>
         </div>
       </div>
     </section>
 
     <!-- VALUES -->
-    <section class="bg-sand py-28 px-6 lg:px-12">
+    <section class="bg-sand py-24 px-5 lg:px-12">
       <div class="max-w-7xl mx-auto">
-        <div class="mb-16">
-          <p class="text-xs font-semibold uppercase tracking-widest text-ember mb-3">What drives us</p>
+        <div class="mb-14">
+          <p class="text-xs font-bold uppercase tracking-widest text-ember mb-3">What drives us</p>
           <h2 class="font-serif font-black text-4xl sm:text-5xl text-bark">Our values</h2>
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="bg-cream rounded-2xl p-8">
-            <span class="font-serif font-black text-6xl text-bark/10 block mb-3">01</span>
-            <h3 class="font-serif font-bold text-xl text-bark mb-3">Integrity</h3>
-            <p class="text-bark/55 text-sm leading-relaxed">We say what we mean and mean what we say. In every ingredient label, every price, every interaction.</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div class="bg-cream rounded-3xl p-8 relative overflow-hidden">
+            <span class="font-serif font-black text-8xl text-bark/5 absolute -top-2 -right-2 leading-none select-none">01</span>
+            <h3 class="font-serif font-bold text-xl text-bark mb-3 relative">Integrity</h3>
+            <p class="text-bark/55 text-sm leading-relaxed relative">We say what we mean and mean what we say — in every ingredient label, every price, every interaction.</p>
           </div>
-          <div class="bg-cream rounded-2xl p-8">
-            <span class="font-serif font-black text-6xl text-bark/10 block mb-3">02</span>
-            <h3 class="font-serif font-bold text-xl text-bark mb-3">Craft</h3>
-            <p class="text-bark/55 text-sm leading-relaxed">We take pride in the details other people skip. That obsession is what separates good from great.</p>
+          <div class="bg-cream rounded-3xl p-8 relative overflow-hidden">
+            <span class="font-serif font-black text-8xl text-bark/5 absolute -top-2 -right-2 leading-none select-none">02</span>
+            <h3 class="font-serif font-bold text-xl text-bark mb-3 relative">Craft</h3>
+            <p class="text-bark/55 text-sm leading-relaxed relative">We take pride in the details other people skip. That obsession is what separates a great snack from a mediocre one.</p>
           </div>
-          <div class="bg-cream rounded-2xl p-8">
-            <span class="font-serif font-black text-6xl text-bark/10 block mb-3">03</span>
-            <h3 class="font-serif font-bold text-xl text-bark mb-3">Health First</h3>
-            <p class="text-bark/55 text-sm leading-relaxed">Every ingredient is chosen for nutrition and taste. Your health is never an afterthought — it's the starting point.</p>
+          <div class="bg-cream rounded-3xl p-8 relative overflow-hidden">
+            <span class="font-serif font-black text-8xl text-bark/5 absolute -top-2 -right-2 leading-none select-none">03</span>
+            <h3 class="font-serif font-bold text-xl text-bark mb-3 relative">Health First</h3>
+            <p class="text-bark/55 text-sm leading-relaxed relative">Every ingredient is chosen for nutrition first, flavour second. Your health is never an afterthought — it's the starting point.</p>
           </div>
-          <div class="bg-cream rounded-2xl p-8">
-            <span class="font-serif font-black text-6xl text-bark/10 block mb-3">04</span>
-            <h3 class="font-serif font-bold text-xl text-bark mb-3">Consistency</h3>
-            <p class="text-bark/55 text-sm leading-relaxed">Your tenth order should be exactly as good as your first. We build systems that guarantee it.</p>
+          <div class="bg-cream rounded-3xl p-8 relative overflow-hidden">
+            <span class="font-serif font-black text-8xl text-bark/5 absolute -top-2 -right-2 leading-none select-none">04</span>
+            <h3 class="font-serif font-bold text-xl text-bark mb-3 relative">Consistency</h3>
+            <p class="text-bark/55 text-sm leading-relaxed relative">Your tenth order should taste exactly as good as your first. We build systems that make that a guarantee, not a hope.</p>
           </div>
-          <div class="bg-cream rounded-2xl p-8">
-            <span class="font-serif font-black text-6xl text-bark/10 block mb-3">05</span>
-            <h3 class="font-serif font-bold text-xl text-bark mb-3">Honesty</h3>
-            <p class="text-bark/55 text-sm leading-relaxed">No buzzwords. No inflated claims. Just honest products that do exactly what we say they do.</p>
+          <div class="bg-cream rounded-3xl p-8 relative overflow-hidden">
+            <span class="font-serif font-black text-8xl text-bark/5 absolute -top-2 -right-2 leading-none select-none">05</span>
+            <h3 class="font-serif font-bold text-xl text-bark mb-3 relative">Honesty</h3>
+            <p class="text-bark/55 text-sm leading-relaxed relative">No buzzwords. No inflated claims. Just honest products that do exactly what we say they do.</p>
           </div>
-          <div class="bg-cream rounded-2xl p-8">
-            <span class="font-serif font-black text-6xl text-bark/10 block mb-3">06</span>
-            <h3 class="font-serif font-bold text-xl text-bark mb-3">Reach</h3>
-            <p class="text-bark/55 text-sm leading-relaxed">We don't stop at Lagos. We deliver nationwide because healthy eating shouldn't depend on your postcode.</p>
+          <div class="bg-cream rounded-3xl p-8 relative overflow-hidden">
+            <span class="font-serif font-black text-8xl text-bark/5 absolute -top-2 -right-2 leading-none select-none">06</span>
+            <h3 class="font-serif font-bold text-xl text-bark mb-3 relative">Reach</h3>
+            <p class="text-bark/55 text-sm leading-relaxed relative">We deliver to all 36 states because good snacks shouldn't be a Lagos-only privilege.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- TEAM -->
-    <section class="py-28 px-6 lg:px-12 max-w-7xl mx-auto">
+    <section class="py-24 px-5 lg:px-12 max-w-7xl mx-auto">
       <div class="text-center mb-16">
-        <p class="text-xs font-semibold uppercase tracking-widest text-ember mb-3">The people</p>
+        <p class="text-xs font-bold uppercase tracking-widest text-ember mb-3">The people</p>
         <h2 class="font-serif font-black text-4xl sm:text-5xl text-bark">Meet the team</h2>
+        <p class="text-bark/50 mt-4 max-w-sm mx-auto text-sm leading-relaxed">The people behind every bar, every cookie, every delivery. Small team, big heart.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="text-center">
-          <div class="aspect-square rounded-2xl overflow-hidden bg-sand mb-5">
-            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&q=80" alt="Tolu Adeyemi" class="w-full h-full object-cover" />
+        <div class="group text-center">
+          <div class="aspect-square rounded-3xl overflow-hidden bg-sand mb-5 shadow-sm group-hover:shadow-md transition-shadow">
+            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&q=80" alt="Tolu Adeyemi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
           <h3 class="font-serif font-bold text-lg text-bark">Tolu Adeyemi</h3>
-          <p class="text-ember text-xs font-semibold uppercase tracking-wider mt-1">Founder & CEO</p>
+          <p class="text-ember text-xs font-bold uppercase tracking-wider mt-1">Founder &amp; CEO</p>
+          <p class="text-bark/45 text-xs mt-2 leading-relaxed">Started Mobiliin in her mother's Surulere kitchen. Still tastes every batch before it ships.</p>
         </div>
-        <div class="text-center">
-          <div class="aspect-square rounded-2xl overflow-hidden bg-sand mb-5">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Chidi Okafor" class="w-full h-full object-cover" />
+        <div class="group text-center">
+          <div class="aspect-square rounded-3xl overflow-hidden bg-sand mb-5 shadow-sm group-hover:shadow-md transition-shadow">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Chidi Okafor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
           <h3 class="font-serif font-bold text-lg text-bark">Chidi Okafor</h3>
-          <p class="text-ember text-xs font-semibold uppercase tracking-wider mt-1">Head of Production</p>
+          <p class="text-ember text-xs font-bold uppercase tracking-wider mt-1">Head of Production</p>
+          <p class="text-bark/45 text-xs mt-2 leading-relaxed">Oversees every batch. The person responsible for that perfect crunch in every bar.</p>
         </div>
-        <div class="text-center">
-          <div class="aspect-square rounded-2xl overflow-hidden bg-sand mb-5">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Zara Bello" class="w-full h-full object-cover" />
+        <div class="group text-center">
+          <div class="aspect-square rounded-3xl overflow-hidden bg-sand mb-5 shadow-sm group-hover:shadow-md transition-shadow">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Zara Bello" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
           <h3 class="font-serif font-bold text-lg text-bark">Zara Bello</h3>
-          <p class="text-ember text-xs font-semibold uppercase tracking-wider mt-1">Head of Brand</p>
+          <p class="text-ember text-xs font-bold uppercase tracking-wider mt-1">Head of Brand</p>
+          <p class="text-bark/45 text-xs mt-2 leading-relaxed">Makes sure every piece of Mobiliin — from the packaging to this website — says exactly what we stand for.</p>
         </div>
-        <div class="text-center">
-          <div class="aspect-square rounded-2xl overflow-hidden bg-sand mb-5">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Dare Fashola" class="w-full h-full object-cover" />
+        <div class="group text-center">
+          <div class="aspect-square rounded-3xl overflow-hidden bg-sand mb-5 shadow-sm group-hover:shadow-md transition-shadow">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Dare Fashola" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
           <h3 class="font-serif font-bold text-lg text-bark">Dare Fashola</h3>
-          <p class="text-ember text-xs font-semibold uppercase tracking-wider mt-1">Operations Lead</p>
+          <p class="text-ember text-xs font-bold uppercase tracking-wider mt-1">Operations Lead</p>
+          <p class="text-bark/45 text-xs mt-2 leading-relaxed">Makes sure your order gets to you fast and in perfect condition — every single time.</p>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="bg-bark py-24 px-6 lg:px-12 text-center">
+    <section class="bg-bark py-24 px-5 lg:px-12 text-center">
       <div class="max-w-2xl mx-auto">
         <h2 class="font-serif font-black text-4xl sm:text-5xl text-cream mb-6 leading-tight">
-          Healthy snacks, made<br />by passionate people.
+          Wholesome snacks,<br />made by passionate people.
         </h2>
-        <p class="text-cream/50 mb-10 leading-relaxed">Our goal is simple: make sure everyone eats healthy. Explore our range and taste the difference.</p>
-        <div class="flex flex-wrap items-center justify-center gap-4">
-          <a href="products.html" class="inline-flex items-center gap-2 bg-ember text-cream font-semibold px-7 py-4 rounded-full hover:bg-ember/80 transition-colors duration-300">
-            Shop products <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        <p class="text-cream/50 mb-10 leading-relaxed text-sm sm:text-base max-w-md mx-auto">Our goal is simple: make sure everyone can eat healthy. Explore our five snacks and taste the Mobiliin difference.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a href="products.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-ember text-cream font-bold px-8 py-4 rounded-full hover:bg-ember/80 transition-colors duration-300 text-sm">
+            Shop all snacks <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
-          <a href="contact.html" class="inline-flex items-center gap-2 border border-cream/25 text-cream font-semibold px-7 py-4 rounded-full hover:border-cream/60 transition-colors duration-300">
+          <a href="contact.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-cream/30 text-cream font-bold px-8 py-4 rounded-full hover:border-cream/60 transition-colors duration-300 text-sm">
             Get in touch
           </a>
         </div>
@@ -338,64 +315,94 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-bark text-cream border-t border-cream/10 pt-16 pb-8 px-6 lg:px-12">
-    <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-      <div class="lg:col-span-2">
-        <a href="index.html" class="font-serif font-black text-2xl tracking-tight block mb-4">MOBILIN</a>
-        <p class="text-cream/50 text-sm leading-relaxed max-w-xs">Healthy snacks made in Lagos, delivered nationwide. Because everyone deserves to eat well.</p>
-        <div class="flex items-center gap-4 mt-6">
-          <a href="#" aria-label="Instagram" class="text-cream/40 hover:text-cream transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-          <a href="#" aria-label="Twitter"   class="text-cream/40 hover:text-cream transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
-          <a href="#" aria-label="Facebook"  class="text-cream/40 hover:text-cream transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+  <footer class="bg-bark text-cream">
+    <div class="border-b border-cream/10 px-5 lg:px-12 py-10">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div>
+          <a href="index.html" class="font-serif font-black text-3xl tracking-tight block">MOBILIIN</a>
+          <p class="text-cream/45 text-sm mt-1.5">Crafted in Lagos. Made for everyone.</p>
         </div>
-      </div>
-      <div>
-        <p class="text-xs font-semibold uppercase tracking-widest text-cream/40 mb-5">Navigate</p>
-        <ul class="space-y-3 text-sm text-cream/60">
-          <li><a href="index.html"    class="hover:text-cream transition-colors">Home</a></li>
-          <li><a href="about.html"   class="hover:text-cream transition-colors">About</a></li>
-          <li><a href="products.html" class="hover:text-cream transition-colors">Products</a></li>
-          <li><a href="contact.html" class="hover:text-cream transition-colors">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="text-xs font-semibold uppercase tracking-widest text-cream/40 mb-5">Contact</p>
-        <ul class="space-y-3 text-sm text-cream/60">
-          <li class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5 shrink-0 text-ember"></i> 14 Brand Street, Lekki Phase 1, Lagos</li>
-          <li class="flex items-center gap-2"><i data-lucide="mail"    class="w-4 h-4 shrink-0 text-ember"></i> hello@mobilin.ng</li>
-          <li class="flex items-center gap-2"><i data-lucide="phone"   class="w-4 h-4 shrink-0 text-ember"></i> +234 800 000 0000</li>
-        </ul>
+        <a href="https://wa.me/2348000000000" class="inline-flex items-center gap-2.5 bg-[#25D366] text-white font-bold px-7 py-3.5 rounded-full hover:bg-[#20BD5A] transition-colors text-sm shrink-0">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> Order on WhatsApp
+        </a>
       </div>
     </div>
-    <div class="border-t border-cream/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream/30">
-      <p>&copy; 2026 Mobilin. All rights reserved.</p>
-      <p>Made in Lagos · Delivered Nationwide</p>
+    <div class="px-5 lg:px-12 py-14">
+      <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-6">
+        <div class="col-span-2">
+          <p class="text-cream/45 text-sm leading-relaxed max-w-xs mb-7">We make wholesome snacks that taste as good as they are for you. No preservatives. No compromise. Just good food from Lagos.</p>
+          <div class="flex gap-3 mb-6">
+            <a href="#" aria-label="Instagram" class="w-9 h-9 bg-cream/10 rounded-full flex items-center justify-center hover:bg-cream/20 transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+            <a href="#" aria-label="Twitter"   class="w-9 h-9 bg-cream/10 rounded-full flex items-center justify-center hover:bg-cream/20 transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+            <a href="#" aria-label="Facebook"  class="w-9 h-9 bg-cream/10 rounded-full flex items-center justify-center hover:bg-cream/20 transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+            <a href="#" aria-label="TikTok"    class="w-9 h-9 bg-cream/10 rounded-full flex items-center justify-center hover:bg-cream/20 transition-colors"><i data-lucide="video" class="w-4 h-4"></i></a>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-1.5 bg-cream/8 text-cream/50 text-[10px] font-medium px-3 py-1.5 rounded-full"><i data-lucide="leaf" class="w-3 h-3 text-moss"></i> 100% Natural</span>
+            <span class="inline-flex items-center gap-1.5 bg-cream/8 text-cream/50 text-[10px] font-medium px-3 py-1.5 rounded-full"><i data-lucide="shield-check" class="w-3 h-3 text-moss"></i> Quality Assured</span>
+          </div>
+        </div>
+        <div>
+          <p class="text-[10px] font-bold uppercase tracking-[.15em] text-cream/35 mb-5">Navigate</p>
+          <ul class="space-y-3 text-sm">
+            <li><a href="index.html"    class="text-cream/55 hover:text-cream transition-colors">Home</a></li>
+            <li><a href="about.html"   class="text-cream/55 hover:text-cream transition-colors">About us</a></li>
+            <li><a href="products.html" class="text-cream/55 hover:text-cream transition-colors">Products</a></li>
+            <li><a href="contact.html" class="text-cream/55 hover:text-cream transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-[10px] font-bold uppercase tracking-[.15em] text-cream/35 mb-5">Our Snacks</p>
+          <ul class="space-y-3 text-sm">
+            <li><a href="products.html" class="text-cream/55 hover:text-cream transition-colors">Peanut Brittle Bar</a></li>
+            <li><a href="products.html" class="text-cream/55 hover:text-cream transition-colors">Rice Krispies Bar</a></li>
+            <li><a href="products.html" class="text-cream/55 hover:text-cream transition-colors">Oat Bar</a></li>
+            <li><a href="products.html" class="text-cream/55 hover:text-cream transition-colors">Coconut Candy Bar</a></li>
+            <li><a href="products.html" class="text-cream/55 hover:text-cream transition-colors">Corn Cookies</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-[10px] font-bold uppercase tracking-[.15em] text-cream/35 mb-5">Contact</p>
+          <ul class="space-y-4 text-sm">
+            <li class="flex items-start gap-2.5 text-cream/55"><i data-lucide="map-pin" class="w-4 h-4 shrink-0 mt-0.5 text-ember"></i><span>14 Brand Street, Lekki Phase 1, Lagos</span></li>
+            <li class="flex items-center gap-2.5 text-cream/55"><i data-lucide="mail"   class="w-4 h-4 shrink-0 text-ember"></i> hello@mobiliin.ng</li>
+            <li class="flex items-center gap-2.5 text-cream/55"><i data-lucide="phone"  class="w-4 h-4 shrink-0 text-ember"></i> +234 800 000 0000</li>
+            <li class="flex items-center gap-2.5 text-cream/35 text-xs mt-1"><i data-lucide="clock" class="w-3.5 h-3.5 shrink-0"></i> Mon–Fri 9am–6pm · Sat 10am–4pm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-cream/10 px-5 lg:px-12 py-6">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-cream/30">
+        <p>&copy; 2026 Mobiliin. All rights reserved. · Lagos, Nigeria</p>
+        <p>Website by <span class="text-cream/55 font-bold tracking-wide">MASYS</span></p>
+      </div>
     </div>
   </footer>
 
+  <!-- MOBILE STICKY ORDER BAR -->
+  <div class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-cream/95 backdrop-blur-md border-t border-bark/10 px-4 py-3">
+    <div class="flex items-center gap-3">
+      <a href="https://wa.me/2348000000000" class="flex-1 flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold py-3.5 rounded-full text-sm">
+        <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
+      </a>
+      <a href="products.html" class="flex-1 flex items-center justify-center gap-2 bg-bark text-cream font-bold py-3.5 rounded-full text-sm hover:bg-ember transition-colors">
+        Order Now <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </div>
+
   <script>
-    // Mobile nav drawer
-    const menuBtn   = document.getElementById('menu-btn');
-    const drawer    = document.getElementById('mobile-drawer');
-    const overlay   = document.getElementById('drawer-overlay');
-    const closeBtn  = document.getElementById('close-drawer');
-
-    function openDrawer()  {
-      drawer.classList.add('drawer-open');
-      overlay.classList.add('overlay-open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeDrawer() {
-      drawer.classList.remove('drawer-open');
-      overlay.classList.remove('overlay-open');
-      document.body.style.overflow = '';
-    }
-
+    lucide.createIcons();
+    const menuBtn  = document.getElementById('menu-btn');
+    const drawer   = document.getElementById('mobile-drawer');
+    const overlay  = document.getElementById('drawer-overlay');
+    const closeBtn = document.getElementById('close-drawer');
+    function openDrawer()  { drawer.classList.add('drawer-open'); overlay.classList.add('overlay-open'); document.body.style.overflow='hidden'; }
+    function closeDrawer() { drawer.classList.remove('drawer-open'); overlay.classList.remove('overlay-open'); document.body.style.overflow=''; }
     menuBtn.addEventListener('click', openDrawer);
     closeBtn.addEventListener('click', closeDrawer);
     overlay.addEventListener('click', closeDrawer);
-
-    lucide.createIcons();
   </script>
 </body>
 </html>

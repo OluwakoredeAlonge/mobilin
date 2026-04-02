@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(jq -r \"select\\(.message.role == \"\"user\"\"\\) | .message.content[0].text\" C:UsersUSER.claudeprojectsC--Users-USER-Desktop-mobilinbe55c6d2-6b95-4507-8bf4-cd5ae41e707c.jsonl)"
+    ]
+  }
+}
